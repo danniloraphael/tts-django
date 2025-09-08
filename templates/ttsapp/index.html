@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'global/css/styles.css' %}">
+  <title>Texto → Áudio (gTTS)</title>
+</head>
+<body>
+  <h1>Transformar texto em áudio (Django + gTTS)</h1>
+  <form method="post">
+    {% csrf_token %}
+
+    <p>
+      <label for="id_text">Texto</label><br>
+      {{ form.text }}
+    </p>
+
+    <div class="row">
+      <p>
+        <label for="id_lang">Idioma</label><br>
+        {{ form.lang }}
+      </p>
+      <p>
+        <label for="id_filename">Nome do arquivo (opcional)</label><br>
+        {{ form.filename }}
+      </p>
+    </div>
+
+    <p>
+      <label for="id_slow">{{ form.slow }}Velocidade lenta</label>
+    </p>
+
+    <div class="actions">
+      <button type="submit">Converter</button>
+    </div>
+  </form>
+
+  {% if error_msg %}
+    <p class="error">{{ error_msg }}</p>
+  {% endif %}
+
+  {% if audio_url %}
+    <div class="card">
+      <h2>Resultado</h2>
+      <audio controls src="{{ audio_url }}"></audio>
+      <p>
+        <a download href="{{ audio_url }}">Baixar MP3</a>
+      </p>
+    </div>
+  {% endif %}
+</body>
+</html>
