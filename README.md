@@ -21,7 +21,6 @@ utlizando Django e a biblioteca gTTS do Google.
     ```
 3. Faça as migrações:
     ```bash
-    python manage.py makemigrations
     python manage.py migrate
     ```
 4. Inicie o servidor:
