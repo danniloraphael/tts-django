@@ -1,4 +1,4 @@
-# TTS Django Project
+# Transformar texto em áudio (Django + gTTS)
 
 Este projeto é uma aplicação web simples para conversão de texto em fala (Text-to-Speech - TTS)
 utlizando Django e a biblioteca gTTS do Google.
