@@ -13,7 +13,7 @@ utlizando Django e a biblioteca gTTS do Google.
 
 1. Clone o repositório:
     ```bash
-    git clone git@github.com:danniloraphael/tts_django.git
+    git clone git@github.com:danniloraphael/tts-django.git
     ```
 2. Instale as dependências:
     ```bash
